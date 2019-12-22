@@ -1,43 +1,35 @@
-void main()
+int main()
 {
-int sno,s1,s2,s3,tot;
+int sno,s1,s2,s3,tot,count=0;
 float avg;
 char Sname[20];
-printf("student sno,name,s1,s2,s3"\n);
-scanf("%d%s%d%d%d",&Sno,&Sname,&s1,&s2,&s3);
+printf("Student sno,name,s1,s2,s3 : ");
+scanf("%d %s %d %d %d",&sno,Sname,&s1,&s2,&s3);
 tot=s1+s2+s3;
-avg=(float)tot/3;
-printf("**STUDENT RESULT OF SV GOVT POLYTECHNIC**"\n);
-printf("---------"\n);
-printf("student H.no:%d",Sno",\n);
-printf ("student name:%s",Sname\n);
-printf ("total marks:%d",tot\n);
-printf("Average marks:%.2f",avg\n);
- 
-if(s1>=40)
-{
- if(s2>=40)
- {
-  if(s3>=40)
-  {
-printf("RESULT:PASSED"\n);
-     if(avg>=80)
- printf("GRADE:A"\n);
-     else if(avg>=60)
- printf("GRADE:B"\n);
-     else if(avg>=50)
- printf("GRADE:C"\n);
-else
- printf ("GRADE:D"\n);
-    }
-else 
-   printf("subject 3 failed"\n);
-   }
-else
-   printf ("subject 2 failed"\n);
-else 
-   printf ("subject 1failed"\n);
-  getch();
+avg=((float)tot)/3;
+printf("**STUDENT RESULT OF SV GOVT POLYTECHNIC**\n");
+printf("\t---------------\n");
+printf("Minimum Pass marks 35");
+printf("\nStudent H.no:%d",sno);
+printf ("\nStudent name:%s",Sname);
+printf ("\nTotal marks:%d",tot);
+printf("\nAverage marks:%.2f",avg);
+if(s1>=35 && s2>=35 && s3>=35){
+  printf("\nWooah!! You Got Passed\n");
+  if(avg>=80)
+  printf("GRADE:A");
+  else if(avg>=60)
+  printf("GRADE:B");
+  else if(avg>=50)
+  printf("GRADE:C");
+  else 
+  printf("GRADE:D");
 }
-
-
+else if(s1<35 || s2<35 || s3<35){
+  printf("\nuh!! oh!!\n");
+ if(s1<35) count++;
+ if(s2<35) count++;
+ if(s3<35) count++;
+ printf("You have failed in %d subject",count);
+}
+}
